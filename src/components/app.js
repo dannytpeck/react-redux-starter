@@ -1,5 +1,5 @@
 import React from 'react';
-import { Component } from 'react';
+const Component = React.Component;
 
 export default class App extends Component {
   render() {
