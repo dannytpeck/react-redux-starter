@@ -1,4 +1,4 @@
-# ReduxSimpleStarter
+# simple-redux-starter
 
 Forked from Stephen Grider's excellent version [here](https://github.com/StephenGrider/ReduxSimpleStarter).
 
