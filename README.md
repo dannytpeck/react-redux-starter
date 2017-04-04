@@ -1,14 +1,14 @@
-# simple-redux-starter
+# react-redux-starter
 
-Forked from Stephen Grider's excellent version [here](https://github.com/StephenGrider/ReduxSimpleStarter).
+Inspired by Stephen Grider's excellent version [here](https://github.com/StephenGrider/ReduxSimpleStarter).
 
 ###Getting Started###
 
-Checkout this repo, install dependencies, then build with webpack using these steps:
+Clone this repo, install dependencies, then start developing with webpack/browser-sync using these steps:
 
 ```
-	> git clone https://github.com/dtpeck/simple-redux-starter.git
-	> cd simple-redux-starter
+	> git clone https://github.com/dannytpeck/react-redux-starter.git
+	> cd react-redux-starter
 	> npm install
-	> npm build
+	> npm start
 ```
