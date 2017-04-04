@@ -1,26 +1,33 @@
+var path = require('path');
+var BrowserSyncPlugin = require('browser-sync-webpack-plugin');
+
 module.exports = {
   entry: [
-    './src/index.js'
+    'babel-polyfill',
+    path.resolve(__dirname, 'src/index.js')
   ],
   output: {
-    path: __dirname,
-    publicPath: '/',
+    pathinfo: true,
+    path: path.resolve(__dirname, 'js'),
+    publicPath: './js/',
     filename: 'bundle.js'
   },
-  module: {
-    loaders: [{
-      exclude: /node_modules/,
-      loader: 'babel',
-      query: {
-        presets: ['react', 'es2015', 'stage-1']
+  watch: true,
+  plugins: [
+    new BrowserSyncPlugin({
+      host: process.env.IP || 'localhost',
+      port: process.env.PORT || 3000,
+      server: {
+        baseDir: ['./', './build']
       }
-    }]
+    })
+  ],
+  module: {
+    rules: [
+      { test: /\.js$/, use: ['babel-loader'], include: path.join(__dirname, 'src') }
+    ]
   },
   resolve: {
-    extensions: ['', '.js', '.jsx']
-  },
-  devServer: {
-    historyApiFallback: true,
-    contentBase: './'
+    extensions: ['.js', '.jsx']
   }
 };
