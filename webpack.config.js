@@ -4,7 +4,7 @@ var BrowserSyncPlugin = require('browser-sync-webpack-plugin');
 module.exports = {
   entry: [
     'babel-polyfill',
-    path.resolve(__dirname, 'src/index.js')
+    path.resolve(__dirname, 'src/index.jsx')
   ],
   output: {
     pathinfo: true,
@@ -23,8 +23,15 @@ module.exports = {
     })
   ],
   module: {
-    rules: [
-      { test: /\.js$/, use: ['babel-loader'], include: path.join(__dirname, 'src') }
+    loaders: [
+      {
+        // "test" is commonly used to match the file extension
+        test: /\.jsx?$/,
+        // "include" is commonly used to match the directories
+        include: path.join(__dirname, 'src'),
+        // the "loader"
+        loader: 'babel-loader'
+      }
     ]
   },
   resolve: {
